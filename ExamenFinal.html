@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exameen</title>
+</head>
+<body>
+<main id="ContenedorPrincipal">
+
+	<h1 id="miTitulo">¡Conoce a Mafumafu!</h1>
+
+	<div id="UnoBloque">
+		<img id="MafuUno" src="img/chibiMafuFlor.jfif">
+		<h3>¿Quién es Mafumafu?</h3>
+		<p>Mafumafu (en japonés: まふまふ) es un cantautor de origen japonés. Reconocido por ser vocalista, letrista y compositor en la unidad "After the Rain", junto al cantante Soraru. Este cantante está normalmente asociado con el color blanco, debido a que comúnmente es comparado con un ángel. Posee un amplio rango vocal de cuatro octavas, que va desde la nota baja de A2 hasta la nota alta de C7, por lo cuál su voz es muy versátil.</p>
+	</div>
+	<br><br>
+	<div id="DosBloque">
+		<div>
+			<img id="MafuDos" src="img/mafumafuPersona.jfif">
+		</div>
+		
+		<div id="infoP">
+			<h3>Información Personal</h3>
+
+			<h5>Nombre en japonés:</h5>
+			<p>まふまふ</p>
+			
+			<h5>Nacimiento</h5>
+			<p>18 de octubre de 1991</p>
+			
+			<h5>Nacionalidad</h5>
+			<p>Japonés</p>
+		</div>
+	</div>
+	<br><br>
+	<div id="TresBloque">
+		<div id="infoPr">
+			<h3>Información profesional</h3>
+
+			<h5>Ocupación</h5>
+			<p>	Cantante, compositor y productor de televisión</p>
+
+			<h5>Años activo</h5>
+			<p>desde 2010</p>
+
+			<h5>Instrumentos</h5>
+			<p>	Piano, guitarra, bajo y voz</p>
+
+			<h5>Discográfica</h5>
+			<p>A-Sketch (desde 2019)</p>
+
+			<h5>Sitio web</h5>
+			<p>	uni-mafumafu.jp</p>
+		</div>
+		<div>
+			<img id="MafuTres" src="img/mafumafu_pixels.jfif">
+		</div>
+	</div>
+	<br>
+	<button id="btnIMC">Calcula el IMC</button>
+
+	<audio id="miAudio" src="Aud/MafumafuSolo.mp3"></audio>
+	<button id="playButtonOne">Reproducir música Solo</button>
+	<button onclick="detenerMusica()">Detener música</button>
+
+
+	<audio id="ElAudio" src="Aud/MafumafuYSoraru.mp3"></audio>
+	<button id="playButtonTwo">Reproducir música Duo</button>
+
+	<button id="BTNcoment">Comentarios</button>
+	<br><br>
+	<img id="imagenfinal" src="img/chibiMafuTerubozu.jfif">
+	<br><br>
+	<small id="footer">Katsumi~ <br> /⁠ᐠ⁠｡⁠ꞈ⁠｡⁠ᐟ⁠\ </small>
+</main>
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+var Principaal = document.getElementById('ContenedorPrincipal');
+var h1 = document.getElementById('miTitulo');
+
+var img1 = document.getElementById('MafuUno');
+var bloque1 = document.getElementById('UnoBloque');
+
+var persona = document.getElementById('MafuDos');
+var bloque2 = document.getElementById('DosBloque');
+
+var bloque3 = document.getElementById('TresBloque');
+var imgPixel = document.getElementById('MafuTres');
+
+var InfoPer = document.getElementById('infoP');
+var InfoPro = document.getElementById('infoPr');
+
+var botonIMC = document.getElementById('btnIMC');
+
+var audio1M = document.getElementById('miAudio');
+var boton1 = document.getElementById('playButtonOne');
+
+var audio1MS = document.getElementById('ElAudio');
+var boton2 = document.getElementById('playButtonTwo');
+
+var BTNcomentario = document.getElementById('BTNcoment')
+
+var imgFinal = document.getElementById('imagenfinal')
+
+var pie = document.getElementById('footer');
+
+
+document.body.style.backgroundColor = '#ffe5ec';
+Principaal.style.textAlign = 'center';
+Principaal.style.margin = '0 auto';
+
+h1.style.color = '#454546'
+
+img1.style.border = '4px dashed #fb6f92';
+bloque1.style.width = '50%';
+bloque1.style.margin = '0 auto';
+bloque1.style.color = '#02253d';
+
+bloque2.style.display = 'flex';
+bloque2.style.alignItems = 'center';
+bloque2.style.justifyContent = 'center';
+bloque2.style.color = '#664300';
+persona.style.width = '350px' ;
+persona.style.border = '4px groove #fb6f92';
+InfoPer.style.marginLeft = '25px'
+
+bloque3.style.display = 'flex';
+bloque3.style.alignItems = 'center';
+bloque3.style.justifyContent = 'center';
+bloque3.style.color = '#610000';
+imgPixel.style.width = '350px';
+imgPixel.style.border = '4px dotted #fb6f92';
+InfoPro.style.marginRight = '25px';
+
+pie.style.color = '#ffb3c6';
+
+imgFinal.style.width = '100px';
+imgFinal.style.border = '1px solid #fb6f92'
+
+function IMC(peso, talla){
+var promedio = peso / (talla*talla)
+console.log("El IMC es:" + promedio)
+}
+
+botonIMC.addEventListener('click', function() {
+	IMC(70,1.78);
+});
+
+function reproducirMusica() {
+			detenerMusica();
+            audio1M.play();
+
+        }
+
+ boton1.addEventListener('click', reproducirMusica);
+
+function detenerMusica() {
+            audio1M.pause();
+            audio1MS.pause();
+        }
+
+ boton1.addEventListener('click', reproducirMusica);
+
+function reproducirMusicaDuo() {
+ 			detenerMusica();
+            audio1MS.play();
+        }
+
+ boton2.addEventListener('click', reproducirMusicaDuo);
+
+
+function agregarComentario() {
+            var comentario = "Me gusta la forma en la que interactua y enseña para llegar a los estudiantes, pero me gustaría que después que explicase a su modo, hable en forma de resumen la funcionalidad de los código que estamos aprendiendo para que algunos no se pierdan algunas veces. (Ejem. yo :v) Gracias.";
+           console.log("Mi Comentario: " + comentario);
+       }
+
+BTNcomentario.addEventListener('click', agregarComentario);
+
+
+</script>
